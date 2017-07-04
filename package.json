@@ -7,14 +7,22 @@
   "license": "MIT",
   "devDependencies": {
     "@storybook/react": "^3.1.7",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "@workpop/eslint-config-workpop": "^0.0.9",
+    "eslint": "^3.3.1",
+    "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0"
   },
   "scripts": {
-    "storybook": "start-storybook -p 9001 -c example/.storybook"
+    "storybook": "start-storybook -p 9001 -c example/.storybook",
+    "lint": "eslint src",
+    "fix": "npm run lint -- --fix"
   },
+  "pre-commit": [
+    "lint"
+  ],
   "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "apollo-client": "^1.7.0",
     "apollo-test-utils": "^0.3.2",
     "graphql-tools": "^1.1.0",

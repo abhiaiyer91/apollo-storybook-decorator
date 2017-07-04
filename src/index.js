@@ -4,7 +4,7 @@ import { ApolloProvider } from 'react-apollo';
 import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { mockNetworkInterfaceWithSchema } from 'apollo-test-utils';
- import { createLogger } from 'redux-logger'
+import { createLogger } from 'redux-logger';
 
 export default function initializeApollo({ typeDefs, mocks, reducers = {} }) {
   const schema = makeExecutableSchema({ typeDefs });
@@ -38,7 +38,7 @@ export default function initializeApollo({ typeDefs, mocks, reducers = {} }) {
     );
   }
 
-  return story => {
+  return (story) => {
     return <StorybookProvider>{story()}</StorybookProvider>;
   };
 }
