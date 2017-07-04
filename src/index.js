@@ -8,10 +8,12 @@ import { createLogger } from 'redux-logger';
 
 export default function initializeApollo({ typeDefs, mocks, reducers = {} }) {
   const schema = makeExecutableSchema({ typeDefs });
-  addMockFunctionsToSchema({
-    schema,
-    mocks,
-  });
+  if (!!mocks) {
+    addMockFunctionsToSchema({
+      schema,
+      mocks,
+    });
+  }
 
   const graphqlClient = new ApolloClient({
     addTypename: true,
