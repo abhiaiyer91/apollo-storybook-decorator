@@ -21,7 +21,8 @@ The Decorator takes 3 arguments
 
 ```js
 type DecoratorType = {
-  //string representing your graphql schema, if you use tools like `babel-plugin-inline-import` you can import this from a  .graphql file
+  //string representing your graphql schema, if you use tools like `babel-plugin-inline-import`
+  // you can import this from a  .graphql file
   typeDefs: string,
   // object that resolves the keys of your graphql schema
   mocks: Object,
@@ -30,6 +31,43 @@ type DecoratorType = {
 }
 ```
 
+### Usage
+
+You can add the decorator at a per story basis:
+
+```js
+storiesOf('Apollo Client', module)
+  .addDecorator(
+    apolloStorybookDecorator({
+      typeDefs,
+      mocks,
+    }),
+  )
+```
+
+or you can add it to all stories, head to your storybook `config.js`
+
+```js
+import { configure, addDecorator } from '@storybook/react';
+import apolloStorybookDecorator from 'apollo-storybook-decorator';
+import typeDefs from '../wherever/your/typeDefs/live';
+import mocks from '../wherever/your/mocks/live';
+
+addDecorator(
+  apolloStorybookDecorator({
+    typeDefs,
+    mocks
+  })
+);
+
+function loadStories() {
+  // stories...
+}
+
+configure(loadStories, module);
+```
+
+
 ### Quick Example
 
 ```js
@@ -37,7 +75,7 @@ import React from 'react';
 import { graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { storiesOf } from '@storybook/react';
-import apolloStorybookDecorator from '../../src';
+import apolloStorybookDecorator from 'apollo-storybook-decorator';
 
 const typeDefs = `
   type Query {
