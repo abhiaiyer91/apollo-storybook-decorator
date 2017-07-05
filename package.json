@@ -9,6 +9,7 @@
     "@storybook/react": "^3.1.7",
     "@workpop/eslint-config-workpop": "^0.0.9",
     "eslint": "^3.3.1",
+    "faker": "^4.1.0",
     "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0"
   },
@@ -21,12 +22,13 @@
     "lint"
   ],
   "dependencies": {
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "@storybook/addon-actions": "^3.1.6",
     "apollo-client": "^1.7.0",
     "apollo-test-utils": "^0.3.2",
     "graphql-tools": "^1.1.0",
+    "react": "^15.6.1",
     "react-apollo": "^1.4.2",
+    "react-dom": "^15.6.1",
     "redux": "^3.7.1",
     "redux-logger": "^3.0.6"
   }
