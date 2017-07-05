@@ -21,7 +21,7 @@
   },
   "scripts": {
     "release": "standard-version",
-    "prepublish": "babel ./src --ignore test -d ./lib/",
+    "build": "babel ./src --ignore test -d ./lib/",
     "storybook": "start-storybook -p 9001 -c example/.storybook",
     "lint": "eslint src",
     "fix": "npm run lint -- --fix"
