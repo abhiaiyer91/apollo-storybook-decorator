@@ -1,5 +1,5 @@
 {
-  "name": "apollo-storybook",
+  "name": "apollo-storybook-decorator",
   "version": "0.0.0",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
@@ -8,12 +8,20 @@
   "devDependencies": {
     "@storybook/react": "^3.1.7",
     "@workpop/eslint-config-workpop": "^0.0.9",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^3.3.1",
     "faker": "^4.1.0",
     "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0"
   },
   "scripts": {
+    "release": "standard-version",
+    "prepublish": "babel ./src --ignore test -d ./lib/",
     "storybook": "start-storybook -p 9001 -c example/.storybook",
     "lint": "eslint src",
     "fix": "npm run lint -- --fix"
