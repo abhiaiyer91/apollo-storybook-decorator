@@ -17,7 +17,7 @@ yarn add apollo-storybook-decorator -D
 npm install apollo-storybook-decorator --save-dev
 ```
 
-The Decorator takes 3 arguments
+The Decorator takes 4 arguments
 
 ```js
 type DecoratorType = {
@@ -27,7 +27,9 @@ type DecoratorType = {
   // object that resolves the keys of your graphql schema
   mocks: Object,
   // optional reducers to add other redux libraries or your own reducers
-  reducers: ?Object
+  reducers: ?Object,
+  // optional redux middlewares to be applied during creation of the redux store
+  reduxMiddlewares: ?Array<Function>
 }
 ```
 
