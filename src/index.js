@@ -22,7 +22,7 @@ const storybookReduxLogger = {
   },
 };
 
-export default function initializeApollo({ typeDefs, mocks, reducers = {} }) {
+export default function initializeApollo({ typeDefs, mocks, reducers = {}, reduxMiddlewares = [] }) {
   const schema = makeExecutableSchema({ typeDefs });
   if (!!mocks) {
     addMockFunctionsToSchema({
@@ -48,7 +48,7 @@ export default function initializeApollo({ typeDefs, mocks, reducers = {} }) {
 
   const store = createStore(
     reducer,
-    applyMiddleware(logger, graphqlClient.middleware())
+    applyMiddleware(logger, graphqlClient.middleware(), ...reduxMiddlewares)
   );
 
   function StorybookProvider({ children }) {
