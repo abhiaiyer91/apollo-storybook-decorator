@@ -2,7 +2,7 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-import { makeExecutableSchema, addMockFunctionsToSchema } from 'graphql-tools';
+import { makeExecutableSchema, addMockFunctionsToSchema, addResolveFunctionsToSchema } from 'graphql-tools';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { mockNetworkInterfaceWithSchema } from 'apollo-test-utils';
 import { createLogger } from 'redux-logger';
@@ -22,7 +22,14 @@ const storybookReduxLogger = {
   },
 };
 
-export default function initializeApollo({ typeDefs, mocks, reducers = {}, reduxMiddlewares = [] }) {
+export default function initializeApollo({
+  typeDefs,
+  mocks,
+  reducers = {},
+  reduxMiddlewares = [],
+  apolloClientOptions = {},
+  typeResolvers,
+}) {
   const schema = makeExecutableSchema({ typeDefs });
   if (!!mocks) {
     addMockFunctionsToSchema({
@@ -31,10 +38,15 @@ export default function initializeApollo({ typeDefs, mocks, reducers = {}, redux
     });
   }
 
+  if (!!typeResolvers) {
+    addResolveFunctionsToSchema(schema, typeResolvers);
+  }
+
   const graphqlClient = new ApolloClient({
     addTypename: true,
     networkInterface: mockNetworkInterfaceWithSchema({ schema }),
     connectToDevTools: true,
+    ...apolloClientOptions,
   });
 
   const logger = createLogger({
