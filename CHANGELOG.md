@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.4.0"></a>
+# [0.4.0](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/v0.3.0...v0.4.0) (2017-08-25)
+
+
+### Features
+
+* **example:** illustrate the use of the context in a mock function ([e041baf](https://github.com/abhiaiyer91/apollo-storybook-decorator/commit/e041baf))
+* **network-interface:** replace apollo-test-utils by graphql-js directly ([12be56c](https://github.com/abhiaiyer91/apollo-storybook-decorator/commit/12be56c))
+
+
+
 <a name="0.3.0"></a>
 # [0.3.0](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/v0.2.0...v0.3.0) (2017-07-21)
 
