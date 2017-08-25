@@ -19,6 +19,26 @@ HelloWorld = graphql(
   `,
 )(HelloWorld);
 
+let HelloContext = function HelloContext({ data }) {
+  const hello = data && data.helloContext;
+  if (data && data.loading) {
+    return <h1>Loading one second please!</h1>;
+  }
+  return (
+    <h1>
+      {hello}
+    </h1>
+  );
+};
+
+HelloContext = graphql(
+  gql`
+    query helloContext {
+      helloContext
+    }
+  `
+)(HelloContext);
+
 let CurrentUser = function CurrentUser({ data }) {
   const user = data && data.currentUser;
   if (data && data.loading) {
@@ -77,6 +97,9 @@ Counter = compose(
 storiesOf('Apollo Client', module)
   .add('Hello World Test', () => {
     return <HelloWorld />;
+  })
+  .add('Hello World Test (using the context)', () => {
+    return <HelloContext />;
   })
   .add('Current User', () => {
     return <CurrentUser />;

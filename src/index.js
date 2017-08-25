@@ -3,8 +3,8 @@ import { action } from '@storybook/addon-actions';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import { makeExecutableSchema, addMockFunctionsToSchema, addResolveFunctionsToSchema } from 'graphql-tools';
+import { graphql, print } from 'graphql';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { mockNetworkInterfaceWithSchema } from 'apollo-test-utils';
 import { createLogger } from 'redux-logger';
 
 /**
@@ -29,6 +29,8 @@ export default function initializeApollo({
   reduxMiddlewares = [],
   apolloClientOptions = {},
   typeResolvers,
+  context = {},
+  rootValue = {},
 }) {
   const schema = makeExecutableSchema({ typeDefs });
   if (!!mocks) {
@@ -44,7 +46,18 @@ export default function initializeApollo({
 
   const graphqlClient = new ApolloClient({
     addTypename: true,
-    networkInterface: mockNetworkInterfaceWithSchema({ schema }),
+    networkInterface: {
+      query(request) {
+        return graphql(
+          schema,
+          print(request.query),
+          rootValue,
+          context,
+          request.variables,
+          request.operationName
+        );
+      },
+    },
     connectToDevTools: true,
     ...apolloClientOptions,
   });
