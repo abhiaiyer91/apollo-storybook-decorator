@@ -6,7 +6,8 @@ import mocks from '../schema/mocks';
 addDecorator(
   apolloStorybookDecorator({
     typeDefs,
-    mocks
+    mocks,
+    context: { value: 'Hello from the resolver context!' }
   })
 );
 

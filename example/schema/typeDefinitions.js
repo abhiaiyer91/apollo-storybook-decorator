@@ -14,6 +14,7 @@ export default `
 
   type Query {
     helloWorld: String
+    helloContext: String
     currentUser: User
     counts: Int
   }

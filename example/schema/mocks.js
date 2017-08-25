@@ -23,6 +23,9 @@ export default {
       helloWorld: () => {
         return 'Hello from Apollo!!';
       },
+      helloContext: (root, args, context) => {
+        return context.value;
+      },
       allUsers: () => {
         return new MockList(10);
       },
