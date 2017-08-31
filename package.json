@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-decorator",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",

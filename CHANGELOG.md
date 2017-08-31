@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/v0.4.1...v0.5.0) (2017-08-31)
+
+
+### Features
+
+* **middlewares:** take middlewares as a function or an array to support middleware like ReduxThunk ([630a57b](https://github.com/abhiaiyer91/apollo-storybook-decorator/commit/630a57b))
+
+
+
 <a name="0.4.1"></a>
 ## [0.4.1](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/v0.4.0...v0.4.1) (2017-08-25)
 
