@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
 import { storiesOf } from '@storybook/react';
@@ -6,18 +7,22 @@ import { storiesOf } from '@storybook/react';
 let HelloWorld = function HelloWorld({ data }) {
   const hello = data && data.helloWorld;
   if (data && data.loading) {
-    return <h1>Loading one second please!</h1>
+    return <h1>Loading one second please!</h1>;
   }
-  return <h1>{hello}</h1>
+  return (
+    <h1>
+      {hello}
+    </h1>
+  );
 };
 
-HelloWorld = graphql(
-  gql`
-    query hello {
-      helloWorld
-    }
-  `,
-)(HelloWorld);
+const sampleQuery = gql`
+  query hello {
+    helloWorld
+  }
+`;
+
+HelloWorld = graphql(sampleQuery)(HelloWorld);
 
 let HelloContext = function HelloContext({ data }) {
   const hello = data && data.helloContext;
@@ -42,12 +47,14 @@ HelloContext = graphql(
 let CurrentUser = function CurrentUser({ data }) {
   const user = data && data.currentUser;
   if (data && data.loading) {
-    return <h1>Loading one second please!</h1>
+    return <h1>Loading one second please!</h1>;
   }
   return (
     <div>
       <img src={user.avatar} />
-      <h1>{user.name} from {user.city} said "{user.lastAction.message}" </h1>
+      <h1>
+        {user.name} from {user.city} said "{user.lastAction.message}"{' '}
+      </h1>
     </div>
   );
 };
@@ -64,18 +71,25 @@ CurrentUser = graphql(
         city
       }
     }
-  `,
+  `
 )(CurrentUser);
 
 let Counter = function Counter({ data, mutate }) {
   return (
     <div>
-      <h1> The count is {data && data.counts} </h1>
-      <button onClick={function () { return mutate({ refetchQueries: ['getCount']}); }}>Click me!</button>
+      <h1>
+        {' '}The count is {data && data.counts}{' '}
+      </h1>
+      <button
+        onClick={function () {
+          return mutate({ refetchQueries: ['getCount'] });
+        }}
+      >
+        Click me!
+      </button>
     </div>
-
   );
-}
+};
 
 Counter = compose(
   graphql(
@@ -91,8 +105,8 @@ Counter = compose(
         counts
       }
     `
-  ),
-)(Counter)
+  )
+)(Counter);
 
 storiesOf('Apollo Client', module)
   .add('Hello World Test', () => {
@@ -106,4 +120,25 @@ storiesOf('Apollo Client', module)
   })
   .add('Counter', () => {
     return <Counter />;
+  })
+  .add('Redux Thunk Example', () => {
+    function helloWorldThunk() {
+      return (dispatch, getState, { apolloClient }) => {
+        apolloClient.query({
+          query: sampleQuery
+        }).then((data) => {
+          alert(data.data.helloWorld);
+        }).catch((e) => {
+          console.error(e);
+        })
+      };
+    }
+
+    let HelloWorld = function Hello({ dispatch }) {
+      return <button onClick={function () { dispatch(helloWorldThunk());}}>alert me</button>;
+    };
+
+    HelloWorld = connect()(HelloWorld);
+
+    return <HelloWorld />;
   });

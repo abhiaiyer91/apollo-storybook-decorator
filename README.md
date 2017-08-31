@@ -28,11 +28,15 @@ type DecoratorType = {
   // optional reducers to add other redux libraries or your own reducers
   reducers?: Object,
   // optional redux middlewares to be applied during creation of the redux store
-  reduxMiddlewares?: Array<Function>,
+  reduxMiddlewares?: Array<Function> | ({ apolloClient }: MiddlewaresType) => Array<Function>,
   // optional apollo client constructor options
   apolloClientOptions?: Object,
   // optional typeResolvers for complex mocking
-  typeResolvers: Object,
+  typeResolvers?: Object,
+  // optional context 
+  context?: Object,
+  // optional root value
+  rootValue?: Object,
 }
 ```
 
