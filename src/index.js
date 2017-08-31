@@ -2,7 +2,11 @@ import React from 'react';
 import { action } from '@storybook/addon-actions';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
-import { makeExecutableSchema, addMockFunctionsToSchema, addResolveFunctionsToSchema } from 'graphql-tools';
+import {
+  makeExecutableSchema,
+  addMockFunctionsToSchema,
+  addResolveFunctionsToSchema,
+} from 'graphql-tools';
 import { graphql, print } from 'graphql';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
@@ -71,9 +75,14 @@ export default function initializeApollo({
     ...reducers,
   });
 
+  const middlewares =
+    typeof reduxMiddlewares === 'function'
+      ? reduxMiddlewares({ apolloClient: graphqlClient })
+      : reduxMiddlewares;
+
   const store = createStore(
     reducer,
-    applyMiddleware(logger, graphqlClient.middleware(), ...reduxMiddlewares)
+    applyMiddleware(logger, graphqlClient.middleware(), ...middlewares)
   );
 
   function StorybookProvider({ children }) {
