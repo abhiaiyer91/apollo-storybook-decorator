@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
 import { storiesOf } from '@storybook/react';
@@ -120,25 +119,4 @@ storiesOf('Apollo Client', module)
   })
   .add('Counter', () => {
     return <Counter />;
-  })
-  .add('Redux Thunk Example', () => {
-    function helloWorldThunk() {
-      return (dispatch, getState, { apolloClient }) => {
-        apolloClient.query({
-          query: sampleQuery
-        }).then((data) => {
-          alert(data.data.helloWorld);
-        }).catch((e) => {
-          console.error(e);
-        })
-      };
-    }
-
-    let HelloWorld = function Hello({ dispatch }) {
-      return <button onClick={function () { dispatch(helloWorldThunk());}}>alert me</button>;
-    };
-
-    HelloWorld = connect()(HelloWorld);
-
-    return <HelloWorld />;
   });

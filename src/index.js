@@ -1,5 +1,4 @@
 import React from 'react';
-import { action } from '@storybook/addon-actions';
 import ApolloClient from 'apollo-client';
 import { ApolloProvider } from 'react-apollo';
 import {
@@ -8,35 +7,51 @@ import {
   addResolveFunctionsToSchema,
 } from 'graphql-tools';
 import { graphql, print } from 'graphql';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import { createLogger } from 'redux-logger';
+import { InMemoryCache } from 'apollo-cache-inmemory'; // eslint-disable-line
+import { ApolloLink, Observable } from 'apollo-link';
 
-/**
- * Log redux actions to Storybook
- * @type {Object}
- */
-const storybookReduxLogger = {
-  ...console,
-  log(...args) {
-    console.log(...args); // eslint-disable-line no-console
-    const [, , lastItem] = args;
-    if (lastItem && lastItem.type) {
-      action(`${lastItem.type}`)(lastItem);
-    }
-  },
+
+// next 2 funx adapted from
+// https://github.com/apollographql/react-apollo-error-template/blob/b1c8e690ddec5d6a0f2723c2a705ff6913566ee4/src/graphql/link.js
+// which was given as an example in response to
+// https://github.com/apollographql/apollo-client/issues/2497#event-1339022890
+
+const delay = (ms) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+};
+
+export const mklink = (schema, rootValue = {}, context = {}) => {
+  return new ApolloLink((operation) => {
+    return new Observable((observer) => {
+      const { query, operationName, variables } = operation;
+      delay(300) // TBH I have no idea why add a delay here. Revise?
+        .then(() => { return graphql(schema, print(query), rootValue, context, variables, operationName); })
+        .then((result) => {
+          observer.next(result);
+          observer.complete();
+        })
+        .catch(observer.error.bind(observer));
+    });
+  });
 };
 
 export default function initializeApollo({
   typeDefs,
   mocks,
-  reducers = {},
-  reduxMiddlewares = [],
   apolloClientOptions = {},
   typeResolvers,
   context = {},
   rootValue = {},
+   // cacheOptions is a necessary config parameter because some use cases will require a pre-configured
+   // fragmentMatcher such as IntrospectionFragmentMatcher, etc.
+  cacheOptions = {},
 }) {
   const schema = makeExecutableSchema({ typeDefs });
+
   if (!!mocks) {
     addMockFunctionsToSchema({
       schema,
@@ -50,44 +65,15 @@ export default function initializeApollo({
 
   const graphqlClient = new ApolloClient({
     addTypename: true,
-    networkInterface: {
-      query(request) {
-        return graphql(
-          schema,
-          print(request.query),
-          rootValue,
-          context,
-          request.variables,
-          request.operationName
-        );
-      },
-    },
+    cache: new InMemoryCache(cacheOptions),
+    link: mklink(schema, rootValue, context),
     connectToDevTools: true,
     ...apolloClientOptions,
   });
 
-  const logger = createLogger({
-    logger: storybookReduxLogger,
-  });
-
-  const reducer = combineReducers({
-    apollo: graphqlClient.reducer(),
-    ...reducers,
-  });
-
-  const middlewares =
-    typeof reduxMiddlewares === 'function'
-      ? reduxMiddlewares({ apolloClient: graphqlClient })
-      : reduxMiddlewares;
-
-  const store = createStore(
-    reducer,
-    applyMiddleware(logger, graphqlClient.middleware(), ...middlewares)
-  );
-
   function StorybookProvider({ children }) {
     return (
-      <ApolloProvider store={store} client={graphqlClient}>
+      <ApolloProvider client={graphqlClient}>
         <div>
           {children}
         </div>
@@ -103,3 +89,4 @@ export default function initializeApollo({
     );
   };
 }
+
