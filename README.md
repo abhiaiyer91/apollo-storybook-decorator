@@ -11,11 +11,27 @@ Wrap your React Storybook stories with Apollo Client.
 
 ### Getting Started
 
+For Apollo Client 1.x
+
 ```sh
 yarn add apollo-storybook-decorator -D
 
 npm install apollo-storybook-decorator --save-dev
 ```
+
+For Apollo Client 2.x (React)
+
+```sh
+yarn add apollo-storybook-react -D
+
+npm install apollo-storybook-react --save-dev
+```
+
+For Apollo Client 2.x (Vue) COMING SOON
+
+### Options
+
+Apollo Client 1.x:
 
 The Decorator:
 
@@ -31,6 +47,25 @@ type DecoratorType = {
   reduxMiddlewares?: Array<Function> | ({ apolloClient }: MiddlewaresType) => Array<Function>,
   // optional apollo client constructor options
   apolloClientOptions?: Object,
+  // optional typeResolvers for complex mocking
+  typeResolvers?: Object,
+  // optional context 
+  context?: Object,
+  // optional root value
+  rootValue?: Object,
+}
+```
+
+Apollo Client 2.x:
+
+```js
+type DecoratorType = {
+  //string representing your graphql schema, if you use tools like `babel-plugin-inline-import` you can import this from a  .graphql file
+  typeDefs: string | Array<string>,
+  // object that resolves the keys of your graphql schema
+  mocks: Object,
+  apolloClientOptions?: Object,
+  apolloLinkOptions?: Object,
   // optional typeResolvers for complex mocking
   typeResolvers?: Object,
   // optional context 
@@ -140,6 +175,10 @@ To get started, clone this repo and run the following command:
 
 ```bash
 $ yarn # install node deps
+```
+
+```bash
+$ lerna boostrap
 ```
 
 To run the project's examples, run:
