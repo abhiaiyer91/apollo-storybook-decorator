@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
@@ -14,7 +14,7 @@
     "apollo-link": "^1.0.3",
     "babel-cli": "^6.24.1",
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
