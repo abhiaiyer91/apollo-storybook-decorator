@@ -1,4 +1,5 @@
 import faker from 'faker';
+import { MockList } from 'graphql-tools';
 
 const baseUserMock = (fields = {}) => {
   return {

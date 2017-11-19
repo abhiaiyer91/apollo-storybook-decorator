@@ -1,16 +1,12 @@
 {
-  "name": "apollo-storybook-decorator",
+  "name": "apollo-storybook",
   "version": "0.5.1",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-actions": "^3.1.8",
-    "@storybook/react": "^3.1.7",
     "@workpop/eslint-config-workpop": "^0.0.9",
-    "apollo-client": "^1.7.0",
-    "apollo-test-utils": "^0.3.2",
     "babel-cli": "^6.24.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
@@ -18,38 +14,17 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^3.3.1",
-    "faker": "^4.1.0",
-    "graphql": "^0.10.5",
-    "graphql-tools": "^1.1.0",
+    "lerna": "^2.1.2",
     "pre-commit": "^1.2.2",
-    "react": "^15.6.1",
-    "react-apollo": "^1.4.2",
-    "react-dom": "^15.6.1",
-    "react-redux": "^5.0.6",
-    "redux": "^3.7.1",
-    "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0",
     "standard-version": "^4.2.0"
   },
   "scripts": {
     "release": "standard-version",
     "build": "babel ./src --ignore test -d ./lib/",
-    "storybook": "start-storybook -p 9001 -c example/.storybook",
+    "storybookV1": "start-storybook -p 9001 -c ./packages/apollo-storybook-v1/example/.storybook",
+    "storybookReact": "start-storybook -p 9001 -c ./packages/apollo-storybook-react/example/.storybook",
     "lint": "eslint src",
     "fix": "npm run lint -- --fix"
   },
-  "pre-commit": [
-    "lint"
-  ],
-  "peerDependencies": {
-    "@storybook/addon-actions": "^3.1.6",
-    "apollo-client": "^1.7.0",
-    "graphql": "^0.10.5",
-    "graphql-tools": "^1.1.0",
-    "react": "^15.6.1",
-    "react-apollo": "^1.4.2",
-    "react-dom": "^15.6.1",
-    "redux": "^3.7.1",
-    "redux-logger": "^3.0.6"
-  }
+  "pre-commit": ["lint"]
 }
