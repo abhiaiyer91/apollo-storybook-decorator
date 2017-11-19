@@ -1,0 +1,54 @@
+{
+  "name": "apollo-storybook-react",
+  "version": "0.0.0",
+  "description": "Add Apollo Client to your Storybook environment",
+  "main": "lib/index.js",
+  "author": "Abhi Aiyer",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.1.8",
+    "@storybook/react": "^3.1.7",
+    "@workpop/eslint-config-workpop": "^0.0.9",
+    "apollo-cache-inmemory": "^1.1.1",
+    "apollo-client": "^2.0.2",
+    "apollo-link": "^1.0.3",
+    "babel-cli": "^6.24.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "eslint": "^3.3.1",
+    "faker": "^4.1.0",
+    "graphql": "^0.11.7",
+    "graphql-tools": "^2.7.2",
+    "graphql-tag": "^2.5.0",
+    "pre-commit": "^1.2.2",
+    "react": "^15.6.1",
+    "react-apollo": "^2.0.0",
+    "react-dom": "^15.6.1",
+    "standard-version": "^4.2.0"
+  },
+  "scripts": {
+    "release": "standard-version",
+    "build": "babel ./src --ignore test -d ./lib/",
+    "storybook": "start-storybook -p 9001 -c example/.storybook",
+    "lint": "eslint src",
+    "fix": "npm run lint -- --fix"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "peerDependencies": {
+    "@storybook/addon-actions": "^3.1.6",
+    "apollo-cache-inmemory": "^1.1.1",
+    "apollo-client": "^2.0.2",
+    "apollo-link": "^1.0.3",
+    "graphql": "^0.11.7",
+    "graphql-tools": "^2.7.2",
+    "graphql-tag": "^2.5.0",
+    "react": "^15.6.1",
+    "react-apollo": "^2.0.0",
+    "react-dom": "^15.6.1"
+  }
+}

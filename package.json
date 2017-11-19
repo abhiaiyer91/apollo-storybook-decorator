@@ -21,7 +21,8 @@
   "scripts": {
     "release": "standard-version",
     "build": "babel ./src --ignore test -d ./lib/",
-    "storybook": "start-storybook -p 9001 -c ./packages/apollo-storybook-v1/example/.storybook",
+    "storybookV1": "start-storybook -p 9001 -c ./packages/apollo-storybook-v1/example/.storybook",
+    "storybookReact": "start-storybook -p 9001 -c ./packages/apollo-storybook-react/example/.storybook",
     "lint": "eslint src",
     "fix": "npm run lint -- --fix"
   },
