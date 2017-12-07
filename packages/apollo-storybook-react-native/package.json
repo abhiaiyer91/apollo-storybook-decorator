@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-react-native",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
@@ -27,8 +27,8 @@
     "react": "^15.6.1",
     "react-apollo": "^2.0.0",
     "react-dom": "^15.6.1",
-    "standard-version": "^4.2.0",
-    "react-native": "^0.51.0"
+    "react-native": "^0.51.0",
+    "standard-version": "^4.2.0"
   },
   "scripts": {
     "release": "standard-version",
