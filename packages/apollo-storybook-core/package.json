@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-core",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Core Utils for apollo storybook",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
