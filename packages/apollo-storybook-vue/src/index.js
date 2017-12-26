@@ -1,6 +1,5 @@
 import createClient from 'apollo-storybook-core';
 import VueApollo from 'vue-apollo';
-import StoryView from './StoryView.vue';
 
 export default function initializeApollo({
   typeDefs,
@@ -33,18 +32,13 @@ export default function initializeApollo({
     defaultClient: graphqlClient,
   });
 
-  return function VueStory(storyFn) {
-    const story = storyFn();
-
+  return function VueStory() {
     return {
-      render(h) {
-        return h(StoryView, {
-          apolloProvider,
-          scopedSlots: {
-            default: () => { return [h(story)]; },
-          },
-        });
-      },
+      template: `
+      <div>
+          <story/>
+      </div>
+    `,
     };
   };
 }

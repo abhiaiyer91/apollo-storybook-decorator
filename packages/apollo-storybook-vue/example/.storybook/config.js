@@ -1,3 +1,4 @@
+import Vue from 'vue';
 import { configure, addDecorator } from '@storybook/vue'; // eslint-disable
 import apolloStorybookDecorator from '../../src';
 import typeDefs from '../schema/typeDefinitions';
@@ -7,6 +8,7 @@ addDecorator(
   apolloStorybookDecorator({
     typeDefs,
     mocks,
+    Vue,
   })
 );
 

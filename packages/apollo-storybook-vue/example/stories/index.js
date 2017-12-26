@@ -79,7 +79,7 @@ storiesOf('Apollo Client', module).add('Hello World Test', () => {
     components: { HelloWorld },
     template: '<helloWorld  />',
     apollo: {
-      hello: sampleQuery,
+      helloWorld: sampleQuery,
     },
   };
 });

@@ -10,3 +10,4 @@ __tests__
 .tmp/
 build/
 yarn-error.log
+lerna-debug.log

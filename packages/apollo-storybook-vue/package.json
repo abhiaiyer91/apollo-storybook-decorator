@@ -1,4 +1,6 @@
 {
+  "name": "apollo-storybook-vue",
+  "version": "0.0.0",
   "devDependencies": {
     "@storybook/vue": "^3.2.19",
     "@workpop/eslint-config-workpop": "^1.0.0",
@@ -28,6 +30,6 @@
     "vue-apollo": "3.0.0-alpha.2"
   },
   "dependencies": {
-    "apollo-storybook-core": "^0.1.1"
+    "apollo-storybook-core": "^0.2.0"
   }
 }
