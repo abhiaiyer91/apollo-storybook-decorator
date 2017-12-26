@@ -46,6 +46,7 @@ function createLink(schema, rootValue = {}, context = {}, options = {}) {
 
 export default function createClient({
   rootValue,
+  context,
   typeDefs,
   mocks,
   typeResolvers,
