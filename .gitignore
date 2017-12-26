@@ -5,3 +5,4 @@ node_modules/
 yarn-error.log
 npm-debug.log
 /*.sublime-*
+lerna-debug.log
