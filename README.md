@@ -171,6 +171,8 @@ storiesOf('Apollo Client', module)
 
 ### Development
 
+This repo is split up using the `lerna` monorepo module.
+
 To get started, clone this repo and run the following command:
 
 ```bash
@@ -182,6 +184,12 @@ $ lerna boostrap
 ```
 
 To run the project's examples, run:
+
+Current storybook is enabled in `apollo-storybook-react` and `apollo-storybook-v1`
+
+```bash
+cd packages $PACKAGE_OF_CHOICE
+```
 
 ```bash
 $ yarn storybook # for storybook testing
