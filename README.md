@@ -188,7 +188,7 @@ To run the project's examples, run:
 Current storybook is enabled in `apollo-storybook-react` and `apollo-storybook-v1`
 
 ```bash
-cd packages $PACKAGE_OF_CHOICE
+cd packages/$PACKAGE_OF_CHOICE
 ```
 
 ```bash
