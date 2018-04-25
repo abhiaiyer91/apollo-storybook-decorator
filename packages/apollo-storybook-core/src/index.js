@@ -53,7 +53,9 @@ export default function createClient({
   cacheOptions,
   apolloClientOptions,
   apolloLinkOptions,
-  links = [],
+  links = () => {
+    return [];
+  },
 }) {
   const schema = makeExecutableSchema({ typeDefs });
 
@@ -72,10 +74,15 @@ export default function createClient({
     addResolveFunctionsToSchema({ schema, resolvers: typeResolvers });
   }
 
+  const cache = new InMemoryCache(cacheOptions);
+
   return new ApolloClient({
     addTypename: true,
-    cache: new InMemoryCache(cacheOptions),
-    link: ApolloLink.from([...links, createLink(schema, rootValue, context, apolloLinkOptions)]),
+    cache,
+    link: ApolloLink.from([
+      ...links(cache),
+      createLink(schema, rootValue, context, apolloLinkOptions),
+    ]),
     connectToDevTools: true,
     ...apolloClientOptions,
   });

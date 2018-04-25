@@ -7,6 +7,7 @@ export default function initializeApollo({
   mocks,
   apolloLinkOptions = {},
   apolloClientOptions = {},
+  links = [],
   typeResolvers,
   context = {},
   rootValue = {},
@@ -22,6 +23,7 @@ export default function initializeApollo({
     typeDefs,
     rootValue,
     context,
+    links,
     cacheOptions,
   });
 

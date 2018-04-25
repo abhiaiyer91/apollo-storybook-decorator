@@ -6,6 +6,8 @@
   "author": "Abhi Aiyer",
   "license": "MIT",
   "devDependencies": {
+    "@storybook/cli": "^3.4.2",
+    "@storybook/react": "^3.4.2",
     "@workpop/eslint-config-workpop": "^0.0.9",
     "babel-cli": "^6.24.1",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -14,8 +16,11 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^3.3.1",
+    "getstorybook": "^1.7.0",
     "lerna": "^2.1.2",
     "pre-commit": "^1.2.2",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
     "standard-version": "^4.2.0"
   },
   "scripts": {
@@ -26,5 +31,7 @@
     "lint": "eslint src",
     "fix": "npm run lint -- --fix"
   },
-  "pre-commit": ["lint"]
+  "pre-commit": [
+    "lint"
+  ]
 }
