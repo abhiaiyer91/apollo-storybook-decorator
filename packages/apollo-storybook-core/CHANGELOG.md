@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.3.1"></a>
+## [0.3.1](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/apollo-storybook-core@0.3.0...apollo-storybook-core@0.3.1) (2018-04-25)
+
+
+### Bug Fixes
+
+* **storybook:** storybook links ([e121164](https://github.com/abhiaiyer91/apollo-storybook-decorator/commit/e121164))
+
+
+
+
 <a name="0.3.0"></a>
 # 0.3.0 (2018-04-25)
 
