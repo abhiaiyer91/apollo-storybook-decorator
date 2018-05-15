@@ -369,9 +369,9 @@ apollo-link@^1.0.0, apollo-link@^1.0.3:
     apollo-utilities "^1.0.0"
     zen-observable "^0.6.0"
 
-apollo-storybook-core@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.3.0.tgz#81bf0716ee8e71d8e209fb4aa6703e00fa4cd800"
+apollo-storybook-core@^0.3.3:
+  version "0.3.3"
+  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.3.3.tgz#57f8802ead9b6df0e3c4376e4f1496ce66872d67"
 
 apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.2:
   version "1.0.2"
