@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.2.4"></a>
+## [0.2.4](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/apollo-storybook-react-native@0.2.3...apollo-storybook-react-native@0.2.4) (2018-05-30)
+
+
+
+
+**Note:** Version bump only for package apollo-storybook-react-native
+
 <a name="0.2.3"></a>
 ## [0.2.3](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/apollo-storybook-react-native@0.2.2...apollo-storybook-react-native@0.2.3) (2018-05-15)
 
