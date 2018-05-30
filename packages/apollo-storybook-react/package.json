@@ -6,7 +6,6 @@
   "author": "Abhi Aiyer",
   "license": "MIT",
   "devDependencies": {
-    "@storybook/addon-actions": "^3.1.8",
     "@storybook/react": "^3.1.7",
     "@workpop/eslint-config-workpop": "^0.0.9",
     "apollo-cache-inmemory": "^1.1.1",
@@ -39,7 +38,6 @@
     "lint"
   ],
   "peerDependencies": {
-    "@storybook/addon-actions": "^3.1.6",
     "apollo-cache-inmemory": "^1.1.1",
     "apollo-client": "^2.0.2",
     "apollo-link": "^1.0.3",
