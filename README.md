@@ -68,7 +68,7 @@ npm install apollo-storybook-react --save-dev
 ### Full Example
 
 <p align="center">
-  <img width="600" height="auto" src="sbook.png" alt="sbookexample">
+  <img width="700" height="auto" src="sbook.png" alt="sbookexample">
 </p>
 
 ### Usage
