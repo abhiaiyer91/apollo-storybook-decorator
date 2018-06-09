@@ -48,12 +48,12 @@
 Take this:
 
 <p align="center">
-  <img width="600" height="auto" src="example2.png" alt="example">
+  <img width="600" height="auto" src="sbook2.png" alt="example1">
 </p>
 
 To Render this:
 <p align="center">
-  <img width="600" height="auto" src="storybook.png" alt="example">
+  <img width="600" height="auto" src="storybook.png" alt="example1Book">
 </p>
 
 ### Getting Started
@@ -69,7 +69,7 @@ npm install apollo-storybook-react --save-dev
 ### Full Example
 
 <p align="center">
-  <img width="600" height="auto" src="example.png" alt="example">
+  <img width="600" height="auto" src="sbook.png" alt="sbookexample">
 </p>
 
 ### Usage
