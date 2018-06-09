@@ -228,6 +228,10 @@
     react-split-pane "^0.1.77"
     react-treebeard "^2.1.0"
 
+"@types/graphql@0.12.6":
+  version "0.12.6"
+  resolved "https://registry.yarnpkg.com/@types/graphql/-/graphql-0.12.6.tgz#3d619198585fcabe5f4e1adfb5cf5f3388c66c13"
+
 "@workpop/eslint-config-workpop@^0.0.9":
   version "0.0.9"
   resolved "https://registry.yarnpkg.com/@workpop/eslint-config-workpop/-/eslint-config-workpop-0.0.9.tgz#93b4058db988255411b99147883dc859173dcbb9"
@@ -433,7 +437,15 @@ apollo-link-state@^0.4.1:
     apollo-utilities "^1.0.8"
     graphql-anywhere "^4.1.0-alpha.0"
 
-apollo-utilities@^1.0.13, apollo-utilities@^1.0.8:
+apollo-link@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/apollo-link/-/apollo-link-1.2.2.tgz#54c84199b18ac1af8d63553a68ca389c05217a03"
+  dependencies:
+    "@types/graphql" "0.12.6"
+    apollo-utilities "^1.0.0"
+    zen-observable-ts "^0.8.9"
+
+apollo-utilities@^1.0.0, apollo-utilities@^1.0.13, apollo-utilities@^1.0.8:
   version "1.0.13"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.13.tgz#793c858bb42243f7254d3c2961c64a7158e51022"
 
@@ -8992,3 +9004,13 @@ yargs@~3.10.0:
     cliui "^2.1.0"
     decamelize "^1.0.0"
     window-size "0.1.0"
+
+zen-observable-ts@^0.8.9:
+  version "0.8.9"
+  resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.8.9.tgz#d3c97af08c0afdca37ebcadf7cc3ee96bda9bab1"
+  dependencies:
+    zen-observable "^0.8.0"
+
+zen-observable@^0.8.0:
+  version "0.8.8"
+  resolved "https://registry.yarnpkg.com/zen-observable/-/zen-observable-0.8.8.tgz#1ea93995bf098754a58215a1e0a7309e5749ec42"
