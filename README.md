@@ -43,7 +43,6 @@
 
 - Provide GraphQL type definitions to the decorator.
 - Provide a Mock object like you would with `graphql-tools` http://dev.apollodata.com/tools/graphql-tools/mocking.html
-- Optionally pass other redux reducers to take advantage of Redux UI state with Apollo Client
 
 Take this:
 
