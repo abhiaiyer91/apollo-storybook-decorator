@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+<a name="0.1.4"></a>
+## [0.1.4](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/apollo-storybook-react@0.1.3...apollo-storybook-react@0.1.4) (2018-06-09)
+
+
+### Bug Fixes
+
+* **peer:** peer deps ([fa43be8](https://github.com/abhiaiyer91/apollo-storybook-decorator/commit/fa43be8))
+
+
+
+
 <a name="0.1.3"></a>
 ## [0.1.3](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/apollo-storybook-react@0.1.2...apollo-storybook-react@0.1.3) (2018-05-30)
 

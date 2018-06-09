@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-react",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
