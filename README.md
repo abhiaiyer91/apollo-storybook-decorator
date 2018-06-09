@@ -1,7 +1,10 @@
 # Apollo Storybook Decorator
 
-<p align="left">
+<p align="center">
   <img width="200" height="200" src="apollo-storybook-decorator.png" alt="logo">
+</p>
+
+<p align="center">
   Wrap your React Storybook stories with Apollo Client.
 </p>
 
@@ -146,60 +149,9 @@ type DecoratorType = {
 
 ### Quick Example
 
-```js
-import React from 'react';
-import { graphql } from 'react-apollo';
-import gql from 'graphql-tag';
-import { storiesOf } from '@storybook/react';
-import apolloStorybookDecorator from 'apollo-storybook-decorator';
-
-const typeDefs = `
-  type Query {
-    helloWorld: String
-  }
-
-  schema {
-    query: Query
-  }
-`;
-
-const mocks = {
-  Query: () => {
-    return {
-      helloWorld: () => {
-        return 'Hello from Apollo!!';
-      },
-    };
-  },
-};
-
-let HelloWorld = function HelloWorld({ data }) {
-  const hello = data && data.helloWorld;
-  if (data && data.loading) {
-    return <h1>Loading one second please!</h1>;
-  }
-  return <h1>{hello}</h1>;
-};
-
-HelloWorld = graphql(
-  gql`
-    query hello {
-      helloWorld
-    }
-  `
-)(HelloWorld);
-
-storiesOf('Apollo Client', module)
-  .addDecorator(
-    apolloStorybookDecorator({
-      typeDefs,
-      mocks,
-    })
-  )
-  .add('Hello World Test', () => {
-    return <HelloWorld />;
-  });
-```
+<p align="center">
+  <img width="600" height="auto" src="example.png" alt="example">
+</p>
 
 ### Development
 
