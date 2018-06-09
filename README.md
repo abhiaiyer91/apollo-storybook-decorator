@@ -4,19 +4,27 @@ Wrap your React Storybook stories with Apollo Client.
 
 ## Supports
 
-* React (Apollo Client V2)
+### React (Apollo Client V2)
 <p>
   <a href="https://www.npmjs.com/package/apollo-storybook-react">
     <img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download">
   </a>
 </p>
-* React Native (Apollo Client V2)
+### React Native (Apollo Client V2)
 <p>
   <a href="https://www.npmjs.com/package/apollo-storybook-react-native">
     <img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download">
   </a>
 </p>
-* React (Apollo Client V1)
+
+### React (Apollo Client V1)
+<p>
+  <a href="https://www.npmjs.com/package/apollo-storybook-decorator">
+    <img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download">
+  </a>
+</p>
+
+
 
 ## Coming Soon:
 
