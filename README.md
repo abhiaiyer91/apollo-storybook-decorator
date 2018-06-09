@@ -8,7 +8,6 @@
   Wrap your React Storybook stories with Apollo Client.
 </p>
 
-
 ## Supports
 
 ### React (Apollo Client V2)
@@ -37,14 +36,25 @@
 
 ## Coming Soon:
 
-* Vue
-* Angular
+- Vue
+- Angular
 
 ### The Gist
 
-* Provide GraphQL type definitions to the decorator.
-* Provide a Mock object like you would with `graphql-tools` http://dev.apollodata.com/tools/graphql-tools/mocking.html
-* Optionally pass other redux reducers to take advantage of Redux UI state with Apollo Client
+- Provide GraphQL type definitions to the decorator.
+- Provide a Mock object like you would with `graphql-tools` http://dev.apollodata.com/tools/graphql-tools/mocking.html
+- Optionally pass other redux reducers to take advantage of Redux UI state with Apollo Client
+
+Take this:
+
+<p align="center">
+  <img width="600" height="auto" src="example2.png" alt="example">
+</p>
+
+To Render this:
+<p align="center">
+  <img width="600" height="auto" src="storybook.png" alt="example">
+</p>
 
 ### Getting Started
 
@@ -55,6 +65,12 @@ yarn add apollo-storybook-react -D
 
 npm install apollo-storybook-react --save-dev
 ```
+
+### Full Example
+
+<p align="center">
+  <img width="600" height="auto" src="example.png" alt="example">
+</p>
 
 ### Usage
 
@@ -146,12 +162,6 @@ type DecoratorType = {
   rootValue?: Object,
 }
 ```
-
-### Quick Example
-
-<p align="center">
-  <img width="600" height="auto" src="example.png" alt="example">
-</p>
 
 ### Development
 
