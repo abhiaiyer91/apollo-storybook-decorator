@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { graphql, compose } from 'react-apollo';
+import { Query, graphql, compose } from 'react-apollo';
 import gql from 'graphql-tag';
 import { storiesOf } from '@storybook/react';
 
@@ -9,11 +8,7 @@ let HelloWorld = function HelloWorld({ data }) {
   if (data && data.loading) {
     return <h1>Loading one second please!</h1>;
   }
-  return (
-    <h1>
-      {hello}
-    </h1>
-  );
+  return <h1>{hello}</h1>;
 };
 
 const sampleQuery = gql`
@@ -29,11 +24,7 @@ let HelloContext = function HelloContext({ data }) {
   if (data && data.loading) {
     return <h1>Loading one second please!</h1>;
   }
-  return (
-    <h1>
-      {hello}
-    </h1>
-  );
+  return <h1>{hello}</h1>;
 };
 
 HelloContext = graphql(
@@ -44,42 +35,44 @@ HelloContext = graphql(
   `
 )(HelloContext);
 
-let CurrentUser = function CurrentUser({ data }) {
-  const user = data && data.currentUser;
-  if (data && data.loading) {
-    return <h1>Loading one second please!</h1>;
-  }
-  return (
-    <div>
-      <img src={user.avatar} />
-      <h1>
-        {user.name} from {user.city} said "{user.lastAction.message}"{' '}
-      </h1>
-    </div>
-  );
-};
-
-CurrentUser = graphql(
-  gql`
-    query getUser {
-      currentUser {
-        name
-        lastAction {
-          message
-        }
-        avatar
-        city
+const userQuery = gql`
+  query getUser {
+    currentUser {
+      name
+      lastAction {
+        message
       }
+      avatar
+      city
     }
-  `
-)(CurrentUser);
+  }
+`;
+
+function CurrentUser() {
+  return (
+    <Query query={userQuery}>
+      {({ loading, data }) => {
+        const user = data && data.currentUser;
+        if (loading) {
+          return <h1>Loading one second please!</h1>;
+        }
+        return (
+          <div>
+            <img src={user.avatar} />
+            <h1>
+              {user.name} from {user.city} said "{user.lastAction.message}"{' '}
+            </h1>
+          </div>
+        );
+      }}
+    </Query>
+  );
+}
 
 let Counter = function Counter({ data, mutate }) {
   return (
     <div>
-      <h1>
-        {' '}The count is {data && data.counts}{' '}
-      </h1>
+      <h1> The count is {data && data.counts} </h1>
       <button
         onClick={function () {
           return mutate({ refetchQueries: ['getCount'] });
