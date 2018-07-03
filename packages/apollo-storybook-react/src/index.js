@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { ApolloProvider } from 'react-apollo';
 import createClient from 'apollo-storybook-core';
 
@@ -30,7 +30,7 @@ export default function initializeApollo({
   function StorybookProvider({ children }) {
     return (
       <ApolloProvider client={graphqlClient}>
-        <div>{children}</div>
+        <Fragment>{children}</Fragment>
       </ApolloProvider>
     );
   }
