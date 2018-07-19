@@ -1,9 +1,13 @@
 {
-  "name": "apollo-storybook",
+  "name": "apollo-storybook-decorator",
   "version": "0.5.1",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/abhiaiyer91/apollo-storybook-decorator.git"
+  },
   "license": "MIT",
   "devDependencies": {
     "@storybook/cli": "^3.4.2",
