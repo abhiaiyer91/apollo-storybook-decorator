@@ -136,7 +136,7 @@ $ yarn # install node deps
 ```
 
 ```bash
-$ lerna boostrap
+$ lerna bootstrap
 ```
 
 To run the project's examples, run:
