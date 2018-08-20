@@ -1,6 +1,18 @@
 # Change Log
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/apollo-storybook-core@0.3.4...apollo-storybook-core@0.5.1) (2018-08-20)
+
+
+### Bug Fixes
+
+* **remove:** stage0 ([a1b7d20](https://github.com/abhiaiyer91/apollo-storybook-decorator/commit/a1b7d20))
+
+
+
 
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/abhiaiyer91/apollo-storybook-decorator/compare/v0.5.1...v0.5.0) (2018-08-20)
