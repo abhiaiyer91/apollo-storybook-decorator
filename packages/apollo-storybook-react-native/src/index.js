@@ -14,6 +14,7 @@ export default function initializeApollo({
   // cacheOptions is a necessary config parameter because some use cases will require a pre-configured
   // fragmentMatcher such as IntrospectionFragmentMatcher, etc.
   cacheOptions = {},
+  resolverValidationOptions,
 }) {
 
   const graphqlClient = createClient({
@@ -25,6 +26,7 @@ export default function initializeApollo({
     rootValue,
     context,
     cacheOptions,
+    resolverValidationOptions,
   });
 
   function StorybookProvider({ children }) {

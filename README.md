@@ -122,7 +122,23 @@ type DecoratorType = {
   context?: Object,
   // optional root value
   rootValue?: Object,
+  // optional resolver validation options, see: https://git.io/fALf4
+  resolverValidationOptions?: Object
 };
+```
+
+##### resolverValidationOptions
+This option gets passed directly to `makeExecutableSchema` of `graphql-tools`, as described at https://git.io/fALf4. This allows you to override `requireResolversForResolveType` and other validation flags:
+```js
+storiesOf('Apollo Client', module).addDecorator(
+  apolloStorybookDecorator({
+    typeDefs,
+    mocks,
+    resolverValidationOptions: {
+      requireResolversForResolveType: false,
+    },
+  })
+);
 ```
 
 ### Development
