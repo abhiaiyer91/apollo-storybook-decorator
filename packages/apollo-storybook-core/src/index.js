@@ -53,11 +53,12 @@ export default function createClient({
   cacheOptions,
   apolloClientOptions,
   apolloLinkOptions,
+  resolverValidationOptions,
   links = () => {
     return [];
   },
 }) {
-  const schema = makeExecutableSchema({ typeDefs });
+  const schema = makeExecutableSchema({ typeDefs, resolverValidationOptions });
 
   let mockOptions = {};
 
