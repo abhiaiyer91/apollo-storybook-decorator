@@ -88,7 +88,7 @@ or you can add it to all stories, head to your storybook `config.js`
 
 ```js
 import { configure, addDecorator } from '@storybook/react';
-import apolloStorybookDecorator from 'apollo-storybook-decorator-react';
+import apolloStorybookDecorator from 'apollo-storybook-react';
 import typeDefs from '../wherever/your/typeDefs/live';
 import mocks from '../wherever/your/mocks/live';
 
