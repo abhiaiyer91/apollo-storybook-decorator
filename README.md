@@ -46,9 +46,53 @@
 
 Take this:
 
-<p align="center">
-  <img width="700" height="auto" src="sbook2.png" alt="example1">
-</p>
+```js
+import React from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+import { storiesOf } from '@storybook/react';
+
+const userQuery = gql`
+  query getUser = {
+    currentUser {
+      name
+      lastAction {
+        message
+      }
+      avatar
+      city
+    }
+  }
+`;
+
+function CurrentUser() {
+  return (
+    <Query query={userQuery}>
+      {({ loading, data }) => {
+        const user = data && data.currentUser;
+        if (loading) {
+          return <h1>Loading one second please!</h1>;
+        }
+        return (
+          <div>
+            <img src={user.avatar} />
+            <h1>
+              {user.name}
+              from {user.city}
+              said "{user.lastAction.message}"{' '}
+            </h1>
+          </div>
+        );
+      }}
+    </Query>
+  );
+}
+
+storiesOf('Apollo Client', module)
+  .add('Current User', () => {
+    return <CurrentUser />;
+  })
+```
 
 To Render this:
 <p align="center">
