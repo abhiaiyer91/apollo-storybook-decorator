@@ -1,0 +1,13 @@
+src
+test
+example
+coverage
+resources
+flow-typed
+stories
+.storybook
+__tests__
+.tmp/
+build/
+yarn-error.log
+lerna-debug.log
