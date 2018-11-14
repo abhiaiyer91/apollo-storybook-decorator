@@ -1,26 +1,19 @@
 {
   "name": "apollo-storybook-core",
-  "version": "0.2.0",
+  "version": "0.5.2",
   "description": "Core Utils for apollo storybook",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
   "license": "MIT",
   "devDependencies": {
     "@workpop/eslint-config-workpop": "^0.0.9",
-    "apollo-cache-inmemory": "^1.1.1",
-    "apollo-client": "^2.0.2",
-    "apollo-link": "^1.0.3",
     "babel-cli": "^6.24.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
     "eslint": "^3.3.1",
     "faker": "^4.1.0",
-    "graphql": "^0.11.7",
-    "graphql-tag": "^2.5.0",
-    "graphql-tools": "^2.7.2",
     "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0"
   },
@@ -34,15 +27,10 @@
     "lint"
   ],
   "peerDependencies": {
-    "@storybook/addon-actions": "^3.1.6",
-    "apollo-cache-inmemory": "^1.1.1",
-    "apollo-client": "^2.0.2",
-    "apollo-link": "^1.0.3",
-    "graphql": "^0.11.7",
-    "graphql-tag": "^2.5.0",
-    "graphql-tools": "^2.7.2",
-    "react": "^15.6.1",
-    "react-apollo": "^2.0.0",
-    "react-dom": "^15.6.1"
+    "apollo-cache-inmemory": "^1.2.2",
+    "apollo-client": "^2.3.2",
+    "apollo-link": "^1.2.2",
+    "graphql": "^0.13.2",
+    "graphql-tools": "^3.0.2"
   }
 }

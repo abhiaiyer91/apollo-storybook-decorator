@@ -53,24 +53,37 @@ export default function createClient({
   cacheOptions,
   apolloClientOptions,
   apolloLinkOptions,
+  resolverValidationOptions,
+  links = () => {
+    return [];
+  },
 }) {
-  const schema = makeExecutableSchema({ typeDefs });
+  const schema = makeExecutableSchema({ typeDefs, resolverValidationOptions });
+
+  let mockOptions = {};
 
   if (!!mocks) {
-    addMockFunctionsToSchema({
+    mockOptions = {
       schema,
       mocks,
-    });
+    };
+
+    addMockFunctionsToSchema(mockOptions);
   }
 
   if (!!typeResolvers) {
-    addResolveFunctionsToSchema(schema, typeResolvers);
+    addResolveFunctionsToSchema({ schema, resolvers: typeResolvers });
   }
+
+  const cache = new InMemoryCache(cacheOptions);
 
   return new ApolloClient({
     addTypename: true,
-    cache: new InMemoryCache(cacheOptions),
-    link: createLink(schema, rootValue, context, apolloLinkOptions),
+    cache,
+    link: ApolloLink.from([
+      ...links(cache),
+      createLink(schema, rootValue, context, apolloLinkOptions),
+    ]),
     connectToDevTools: true,
     ...apolloClientOptions,
   });
