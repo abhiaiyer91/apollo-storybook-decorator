@@ -34,9 +34,15 @@
   </a>
 </p>
 
-## Coming Soon:
+### Vue (Apollo Client V2)
 
-- Vue
+<p>
+  <a href="https://www.npmjs.com/package/apollo-storybook-vue">
+    <img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download">
+  </a>
+</p>
+
+## Coming Soon:
 - Angular
 
 ### The Gist
