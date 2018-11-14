@@ -8,9 +8,25 @@
 </template>
 
 <script>
+import gql from 'graphql-tag';
+
+const sampleQuery = gql`
+  query hello {
+    helloWorld
+  }
+`;
+
   export default {
-    props: {
-      helloWorld: String,
-    }
+    data() {
+      return {
+        // Initialize your apollo data
+        helloWorld: 'Loading...',
+      };
+    },
+    apollo: {
+      helloWorld: {
+        query: sampleQuery,
+      },
+    },
   }
 </script>

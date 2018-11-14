@@ -34,6 +34,7 @@ export default function initializeApollo({
 
   return function VueStory() {
     return {
+      apolloProvider,
       template: `
       <div>
           <story/>
