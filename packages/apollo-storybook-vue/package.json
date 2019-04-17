@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-vue",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "devDependencies": {
     "@storybook/vue": "^4.0.6",
     "@workpop/eslint-config-workpop": "^1.0.0",
@@ -22,16 +22,20 @@
     "vue": "^2.5.17",
     "vue-apollo": "^3.0.0-beta.26",
     "vue-loader": "^15.4.2",
-    "vue-template-loader": "1.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vue-template-loader": "1.0.0"
   },
   "scripts": {
+    "release": "standard-version",
+    "build": "babel ./src --ignore test -d ./lib/",
+    "lint": "eslint src",
+    "fix": "npm run lint -- --fix",
     "storybook": "start-storybook -p 9001 -c ./example/.storybook"
   },
   "peerDependencies": {
     "vue-apollo": "^3.0.0-beta.26",
-    "vue-template-loader": "1.0.0",
-    "vue-template-compiler": "^2.5.17"
+    "vue-template-compiler": "^2.5.17",
+    "vue-template-loader": "1.0.0"
   },
   "dependencies": {
     "apollo-storybook-core": "^0.5.2"
