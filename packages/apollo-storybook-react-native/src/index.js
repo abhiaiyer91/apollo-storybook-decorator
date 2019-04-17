@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { View } from 'react-native';
 import { ApolloProvider } from 'react-apollo';
 import createClient from 'apollo-storybook-core';
 

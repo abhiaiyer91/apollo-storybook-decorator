@@ -1191,10 +1191,6 @@ apollo-link@^1.2.3:
     apollo-utilities "^1.0.0"
     zen-observable-ts "^0.8.10"
 
-apollo-storybook-core@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.5.2.tgz#494dc0fcaeec236cea86fc8c8453db20eb614418"
-
 apollo-utilities@1.0.25, apollo-utilities@^1.0.25:
   version "1.0.25"
   resolved "https://registry.yarnpkg.com/apollo-utilities/-/apollo-utilities-1.0.25.tgz#899b00f5f990fb451675adf84cb3de82eb6372ea"

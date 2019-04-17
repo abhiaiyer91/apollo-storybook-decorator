@@ -1482,19 +1482,6 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apollo-angular-link-http-common@~1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/apollo-angular-link-http-common/-/apollo-angular-link-http-common-1.4.0.tgz#9e361f481562fad9151f95c43ccafc10ba728426"
-  dependencies:
-    tslib "^1.9.0"
-
-apollo-angular-link-http@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/apollo-angular-link-http/-/apollo-angular-link-http-1.4.0.tgz#6ae499b3ed44e2201a31f41efef1771580b14069"
-  dependencies:
-    apollo-angular-link-http-common "~1.4.0"
-    tslib "^1.9.0"
-
 apollo-angular@^1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/apollo-angular/-/apollo-angular-1.5.0.tgz#da653b76189fb72ea801c51996ea87fe19aa064f"
@@ -1542,10 +1529,6 @@ apollo-link@^1.0.0, apollo-link@^1.2.3:
   dependencies:
     apollo-utilities "^1.0.0"
     zen-observable-ts "^0.8.10"
-
-apollo-storybook-core@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.5.2.tgz#494dc0fcaeec236cea86fc8c8453db20eb614418"
 
 apollo-utilities@1.0.25, apollo-utilities@^1.0.0, apollo-utilities@^1.0.1, apollo-utilities@^1.0.25:
   version "1.0.25"

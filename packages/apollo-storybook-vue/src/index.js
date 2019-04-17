@@ -24,7 +24,7 @@ export default function initializeApollo({
     rootValue,
     context,
     cacheOptions,
-    links
+    links,
   });
 
   // Install the vue plugin
