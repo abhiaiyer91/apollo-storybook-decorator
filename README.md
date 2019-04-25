@@ -45,7 +45,7 @@
 ## Coming Soon:
 - Angular
 
-### The Gist
+## The Gist
 
 - Provide GraphQL type definitions to the decorator.
 - Provide a Mock object like you would with `graphql-tools` http://dev.apollodata.com/tools/graphql-tools/mocking.html
@@ -105,7 +105,7 @@ To Render this:
   <img width="700" height="auto" src="storybook.png" alt="example1Book">
 </p>
 
-### Getting Started
+## Getting Started
 
 For Apollo Client 2.x (React)
 
@@ -115,7 +115,7 @@ yarn add apollo-storybook-react -D
 npm install apollo-storybook-react --save-dev
 ```
 
-### Full Example
+## Full Example
 
 ```js
 import React from 'react';
@@ -178,7 +178,7 @@ storiesOf('Apollo Storybook Decorator', module)
   );
 ```
 
-### Usage
+## Usage
 
 You can add the decorator at a per story basis:
 
@@ -213,7 +213,7 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-#### Options
+### Options
 
 ```js
 type DecoratorType = {
@@ -234,7 +234,7 @@ type DecoratorType = {
 };
 ```
 
-##### resolverValidationOptions
+#### resolverValidationOptions
 This option gets passed directly to `makeExecutableSchema` of `graphql-tools`, as described at https://git.io/fALf4. This allows you to override `requireResolversForResolveType` and other validation flags:
 ```js
 storiesOf('Apollo Client', module).addDecorator(
@@ -248,7 +248,7 @@ storiesOf('Apollo Client', module).addDecorator(
 );
 ```
 
-### Development
+## Development
 
 This repo is split up using the `lerna` monorepo module.
 
