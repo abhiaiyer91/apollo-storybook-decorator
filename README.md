@@ -10,40 +10,11 @@
 
 ## Supports
 
-### React (Apollo Client V2)
 
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-react">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download">
-  </a>
-</p>
-
-### React (Apollo Client V1)
-
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-decorator">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download">
-  </a>
-</p>
-
-### React Native (Apollo Client V2)
-
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-react-native">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download">
-  </a>
-</p>
-
-### Vue (Apollo Client V2)
-
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-vue">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download">
-  </a>
-</p>
-
-## Coming Soon:
-- Angular
+|                  | React                                                                                                                                                              | React Native                                                                                                                                                             | Vue                                                                                                                                                    | Angular     |
+| ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Apollo Client V2 | <a href="https://www.npmjs.com/package/apollo-storybook-react"><img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download"></a>         | <a href="https://www.npmjs.com/package/apollo-storybook-react-native"><img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download"></a> | <a href="https://www.npmjs.com/package/apollo-storybook-vue"><img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download"></a> | Coming Soon |
+| Apollo Client V1 | <a href="https://www.npmjs.com/package/apollo-storybook-decorator"><img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download"></a> | X                                                                                                                                                                        | X                                                                                                                                                      | X           |
 
 ## The Gist
 
