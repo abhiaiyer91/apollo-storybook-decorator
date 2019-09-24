@@ -10,11 +10,10 @@
 
 ## Supports
 
-
-|                  | React                                                                                                                                                              | React Native                                                                                                                                                             | Vue                                                                                                                                                    | Angular     |
+|                  |                                                                               React                                                                                |                                                                               React Native                                                                               |                                                                          Vue                                                                           |   Angular   |
 | ---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :---------: |
-| Apollo Client V2 | <a href="https://www.npmjs.com/package/apollo-storybook-react"><img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download"></a>         | <a href="https://www.npmjs.com/package/apollo-storybook-react-native"><img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download"></a> | <a href="https://www.npmjs.com/package/apollo-storybook-vue"><img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download"></a> | Coming Soon |
-| Apollo Client V1 | <a href="https://www.npmjs.com/package/apollo-storybook-decorator"><img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download"></a> | X                                                                                                                                                                        | X                                                                                                                                                      | X           |
+| Apollo Client V2 |     <a href="https://www.npmjs.com/package/apollo-storybook-react"><img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download"></a>     | <a href="https://www.npmjs.com/package/apollo-storybook-react-native"><img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download"></a> | <a href="https://www.npmjs.com/package/apollo-storybook-vue"><img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download"></a> | Coming Soon |
+| Apollo Client V1 | <a href="https://www.npmjs.com/package/apollo-storybook-decorator"><img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download"></a> |                                                                                    X                                                                                     |                                                                           X                                                                            |      X      |
 
 ## The Gist
 
@@ -24,10 +23,10 @@
 Take this:
 
 ```js
-import React from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import { storiesOf } from '@storybook/react';
+import React from "react";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
+import { storiesOf } from "@storybook/react";
 
 const userQuery = gql`
   query getUser = {
@@ -56,7 +55,7 @@ function CurrentUser() {
             <h1>
               {user.name}
               from {user.city}
-              said "{user.lastAction.message}"{' '}
+              said "{user.lastAction.message}"{" "}
             </h1>
           </div>
         );
@@ -65,13 +64,13 @@ function CurrentUser() {
   );
 }
 
-storiesOf('Apollo Client', module)
-  .add('Current User', () => {
-    return <CurrentUser />;
-  })
+storiesOf("Apollo Client", module).add("Current User", () => {
+  return <CurrentUser />;
+});
 ```
 
 To Render this:
+
 <p align="center">
   <img width="700" height="auto" src="storybook.png" alt="example1Book">
 </p>
@@ -89,11 +88,11 @@ npm install apollo-storybook-react --save-dev
 ## Full Example
 
 ```js
-import React from 'react';
-import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
-import { storiesOf } from '@storybook/react';
-import apolloStorybookDecorator from 'apollo-storybook-react';
+import React from "react";
+import { Query } from "react-apollo";
+import gql from "graphql-tag";
+import { storiesOf } from "@storybook/react";
+import apolloStorybookDecorator from "apollo-storybook-react";
 
 const typeDefs = `
   type Query {
@@ -109,11 +108,11 @@ const mocks = {
   Query: () => {
     return {
       helloWorld: () => {
-        return 'Hello from Apollo!!';
+        return "Hello from Apollo!!";
       }
     };
-  },
-}
+  }
+};
 
 function HelloWorld() {
   return (
@@ -124,7 +123,7 @@ function HelloWorld() {
         }
       `}
     >
-      ({ loading, data }) => {
+      {({ loading, data }) => {
         const hello = data && data.helloWorld;
 
         if (loading) {
@@ -132,21 +131,21 @@ function HelloWorld() {
         }
 
         return <h1>{hello}</h1>;
-      }
+      }}
     </Query>
   );
 }
 
-storiesOf('Apollo Storybook Decorator', module)
+storiesOf("Apollo Storybook Decorator", module)
   .addDecorator(
     apolloStorybookDecorator({
       typeDefs,
-      mocks,
-    }),
+      mocks
+    })
   )
-  .add('Hello World Test', () => {
+  .add("Hello World Test", () => {
     return <HelloWorld />;
-  );
+  });
 ```
 
 ## Usage
@@ -154,10 +153,10 @@ storiesOf('Apollo Storybook Decorator', module)
 You can add the decorator at a per story basis:
 
 ```js
-storiesOf('Apollo Client', module).addDecorator(
+storiesOf("Apollo Client", module).addDecorator(
   apolloStorybookDecorator({
     typeDefs,
-    mocks,
+    mocks
   })
 );
 ```
@@ -165,15 +164,15 @@ storiesOf('Apollo Client', module).addDecorator(
 or you can add it to all stories, head to your storybook `config.js`
 
 ```js
-import { configure, addDecorator } from '@storybook/react';
-import apolloStorybookDecorator from 'apollo-storybook-react';
-import typeDefs from '../wherever/your/typeDefs/live';
-import mocks from '../wherever/your/mocks/live';
+import { configure, addDecorator } from "@storybook/react";
+import apolloStorybookDecorator from "apollo-storybook-react";
+import typeDefs from "../wherever/your/typeDefs/live";
+import mocks from "../wherever/your/mocks/live";
 
 addDecorator(
   apolloStorybookDecorator({
     typeDefs,
-    mocks,
+    mocks
   })
 );
 
@@ -206,15 +205,17 @@ type DecoratorType = {
 ```
 
 #### resolverValidationOptions
+
 This option gets passed directly to `makeExecutableSchema` of `graphql-tools`, as described at https://git.io/fALf4. This allows you to override `requireResolversForResolveType` and other validation flags:
+
 ```js
-storiesOf('Apollo Client', module).addDecorator(
+storiesOf("Apollo Client", module).addDecorator(
   apolloStorybookDecorator({
     typeDefs,
     mocks,
     resolverValidationOptions: {
-      requireResolversForResolveType: false,
-    },
+      requireResolversForResolveType: false
+    }
   })
 );
 ```
