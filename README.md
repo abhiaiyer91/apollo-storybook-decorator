@@ -10,42 +10,13 @@
 
 ## Supports
 
-### React (Apollo Client V2)
 
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-react">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download">
-  </a>
-</p>
+|                  | React                                                                                                                                                              | React Native                                                                                                                                                             | Vue                                                                                                                                                    | Angular     |
+| ---------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------: | :---------: |
+| Apollo Client V2 | <a href="https://www.npmjs.com/package/apollo-storybook-react"><img src="https://img.shields.io/npm/dt/apollo-storybook-react.svg" alt="Npm download"></a>         | <a href="https://www.npmjs.com/package/apollo-storybook-react-native"><img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download"></a> | <a href="https://www.npmjs.com/package/apollo-storybook-vue"><img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download"></a> | Coming Soon |
+| Apollo Client V1 | <a href="https://www.npmjs.com/package/apollo-storybook-decorator"><img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download"></a> | X                                                                                                                                                                        | X                                                                                                                                                      | X           |
 
-### React (Apollo Client V1)
-
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-decorator">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-decorator.svg" alt="Npm download">
-  </a>
-</p>
-
-### React Native (Apollo Client V2)
-
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-react-native">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-react-native.svg" alt="Npm download">
-  </a>
-</p>
-
-### Vue (Apollo Client V2)
-
-<p>
-  <a href="https://www.npmjs.com/package/apollo-storybook-vue">
-    <img src="https://img.shields.io/npm/dt/apollo-storybook-vue.svg" alt="Npm download">
-  </a>
-</p>
-
-## Coming Soon:
-- Angular
-
-### The Gist
+## The Gist
 
 - Provide GraphQL type definitions to the decorator.
 - Provide a Mock object like you would with `graphql-tools` http://dev.apollodata.com/tools/graphql-tools/mocking.html
@@ -105,7 +76,7 @@ To Render this:
   <img width="700" height="auto" src="storybook.png" alt="example1Book">
 </p>
 
-### Getting Started
+## Getting Started
 
 For Apollo Client 2.x (React)
 
@@ -115,7 +86,7 @@ yarn add apollo-storybook-react -D
 npm install apollo-storybook-react --save-dev
 ```
 
-### Full Example
+## Full Example
 
 ```js
 import React from 'react';
@@ -178,7 +149,7 @@ storiesOf('Apollo Storybook Decorator', module)
   );
 ```
 
-### Usage
+## Usage
 
 You can add the decorator at a per story basis:
 
@@ -213,7 +184,7 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
-#### Options
+### Options
 
 ```js
 type DecoratorType = {
@@ -234,7 +205,7 @@ type DecoratorType = {
 };
 ```
 
-##### resolverValidationOptions
+#### resolverValidationOptions
 This option gets passed directly to `makeExecutableSchema` of `graphql-tools`, as described at https://git.io/fALf4. This allows you to override `requireResolversForResolveType` and other validation flags:
 ```js
 storiesOf('Apollo Client', module).addDecorator(
@@ -248,7 +219,7 @@ storiesOf('Apollo Client', module).addDecorator(
 );
 ```
 
-### Development
+## Development
 
 This repo is split up using the `lerna` monorepo module.
 
