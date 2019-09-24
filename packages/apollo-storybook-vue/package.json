@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-vue",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": "lib/index.js",
   "devDependencies": {
     "@storybook/vue": "^4.0.6",
@@ -39,6 +39,6 @@
     "vue-template-loader": "1.0.0"
   },
   "dependencies": {
-    "apollo-storybook-core": "^0.5.2"
+    "apollo-storybook-core": "^0.5.3"
   }
 }

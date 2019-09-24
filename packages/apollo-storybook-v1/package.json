@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-decorator",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "description": "Add Apollo Client to your Storybook environment",
   "main": "lib/index.js",
   "author": "Abhi Aiyer",
@@ -37,7 +37,9 @@
     "lint": "eslint src",
     "fix": "npm run lint -- --fix"
   },
-  "pre-commit": ["lint"],
+  "pre-commit": [
+    "lint"
+  ],
   "peerDependencies": {
     "@storybook/addon-actions": "^3.1.6",
     "apollo-client": "^1.7.0",
