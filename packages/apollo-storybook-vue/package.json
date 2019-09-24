@@ -1,6 +1,7 @@
 {
   "name": "apollo-storybook-vue",
   "version": "0.0.3",
+  "main": "lib/index.js",
   "devDependencies": {
     "@storybook/vue": "^4.0.6",
     "@workpop/eslint-config-workpop": "^1.0.0",
