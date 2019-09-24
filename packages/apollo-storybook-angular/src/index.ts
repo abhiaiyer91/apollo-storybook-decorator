@@ -1,6 +1,6 @@
-import createClient from "apollo-storybook-core";
-import { NgModule } from "@angular/core";
-import { ApolloModule, Apollo } from "apollo-angular";
+import createClient from 'apollo-storybook-core';
+import { NgModule } from '@angular/core';
+import { ApolloModule, Apollo } from 'apollo-angular';
 
 function getComponentSelector(component) {
   // eslint-disable-next-line no-underscore-dangle
@@ -8,7 +8,7 @@ function getComponentSelector(component) {
 }
 
 function getTemplate(metadata) {
-  let tpl = "";
+  let tpl = '';
   if (metadata.component) {
     const selector = getComponentSelector(metadata.component);
     tpl = `<${selector}></${selector}>`;
@@ -27,7 +27,7 @@ function getModuleMetadata(clientModule, metadata) {
   if (component && !moduleMetadata) {
     return {
       declarations: [metadata.component],
-      imports: [clientModule]
+      imports: [clientModule],
     };
   }
 
@@ -35,7 +35,7 @@ function getModuleMetadata(clientModule, metadata) {
     return {
       ...moduleMetadata,
       declarations: [...moduleMetadata.declarations, metadata.component],
-      imports: [clientModule]
+      imports: [clientModule],
     };
   }
 
@@ -52,7 +52,7 @@ export default function initializeApollo({
   rootValue = {},
   // cacheOptions is a necessary config parameter because some use cases will require a pre-configured
   // fragmentMatcher such as IntrospectionFragmentMatcher, etc.
-  cacheOptions = {}
+  cacheOptions = {},
 }) {
   const graphqlClient = createClient({
     mocks,
@@ -62,14 +62,14 @@ export default function initializeApollo({
     typeDefs,
     rootValue,
     context,
-    cacheOptions
+    cacheOptions,
   });
 
   return function(metadataFn) {
     const metadata = metadataFn();
 
     @NgModule({
-      exports: [ApolloModule]
+      exports: [ApolloModule],
     })
     class GraphQLModule {
       constructor(apollo: Apollo) {
@@ -81,7 +81,7 @@ export default function initializeApollo({
     return {
       ...metadata,
       template: getTemplate(metadata),
-      moduleMetadata: getModuleMetadata(GraphQLModule, metadata)
+      moduleMetadata: getModuleMetadata(GraphQLModule, metadata),
     };
   };
 }

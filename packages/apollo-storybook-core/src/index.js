@@ -12,7 +12,7 @@ import { ApolloLink, Observable } from 'apollo-link';
  * Delay for mock latency
  */
 function delay(ms) {
-  return new Promise((resolve) => {
+  return new Promise(resolve => {
     setTimeout(() => {
       resolve();
     }, ms);
@@ -21,8 +21,8 @@ function delay(ms) {
 
 function createLink(schema, rootValue = {}, context = {}, options = {}) {
   const delayMs = (options && options.delayMs) || 300;
-  return new ApolloLink((operation) => {
-    return new Observable((observer) => {
+  return new ApolloLink(operation => {
+    return new Observable(observer => {
       const { query, operationName, variables } = operation;
       delay(delayMs)
         .then(() => {
@@ -32,10 +32,10 @@ function createLink(schema, rootValue = {}, context = {}, options = {}) {
             rootValue,
             context,
             variables,
-            operationName
+            operationName,
           );
         })
-        .then((result) => {
+        .then(result => {
           observer.next(result);
           observer.complete();
         })

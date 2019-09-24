@@ -16,7 +16,6 @@ export default function initializeApollo({
   cacheOptions = {},
   resolverValidationOptions,
 }) {
-
   const graphqlClient = createClient({
     mocks,
     apolloLinkOptions,
@@ -38,7 +37,7 @@ export default function initializeApollo({
     );
   }
 
-  return (story) => {
+  return story => {
     return <StorybookProvider>{story()}</StorybookProvider>;
   };
 }

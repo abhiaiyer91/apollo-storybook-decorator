@@ -1,6 +1,6 @@
-import React, { Fragment } from "react";
-import { ApolloProvider } from "react-apollo";
-import createClient from "apollo-storybook-core";
+import React, { Fragment } from 'react';
+import { ApolloProvider } from 'react-apollo';
+import createClient from 'apollo-storybook-core';
 
 export default function initializeApollo({
   typeDefs,
@@ -15,7 +15,7 @@ export default function initializeApollo({
   // cacheOptions is a necessary config parameter because some use cases will require a pre-configured
   // fragmentMatcher such as IntrospectionFragmentMatcher, etc.
   cacheOptions = {},
-  resolverValidationOptions
+  resolverValidationOptions,
 }) {
   const graphqlClient = createClient({
     mocks,
@@ -27,7 +27,7 @@ export default function initializeApollo({
     context,
     links,
     cacheOptions,
-    resolverValidationOptions
+    resolverValidationOptions,
   });
 
   function StorybookProvider({ children }) {

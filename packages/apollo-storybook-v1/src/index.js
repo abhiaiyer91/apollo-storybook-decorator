@@ -58,7 +58,7 @@ export default function initializeApollo({
           rootValue,
           context,
           request.variables,
-          request.operationName
+          request.operationName,
         );
       },
     },
@@ -82,24 +82,18 @@ export default function initializeApollo({
 
   const store = createStore(
     reducer,
-    applyMiddleware(logger, graphqlClient.middleware(), ...middlewares)
+    applyMiddleware(logger, graphqlClient.middleware(), ...middlewares),
   );
 
   function StorybookProvider({ children }) {
     return (
       <ApolloProvider store={store} client={graphqlClient}>
-        <div>
-          {children}
-        </div>
+        <div>{children}</div>
       </ApolloProvider>
     );
   }
 
-  return (story) => {
-    return (
-      <StorybookProvider>
-        {story()}
-      </StorybookProvider>
-    );
+  return story => {
+    return <StorybookProvider>{story()}</StorybookProvider>;
   };
 }

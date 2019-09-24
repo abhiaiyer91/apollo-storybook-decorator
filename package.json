@@ -32,18 +32,28 @@
     "graphql-tools": "^3.0.2",
     "lerna": "^2.1.2",
     "pre-commit": "^1.2.2",
+    "prettier": "^1.18.2",
     "react": "^16.3.2",
     "react-apollo": "^2.1.4",
     "react-dom": "^16.3.2",
     "standard-version": "^4.2.0"
   },
   "scripts": {
-    "release": "standard-version",
-    "build": "babel ./src --ignore test -d ./lib/",
-    "storybookV1": "start-storybook -p 9001 -c ./packages/apollo-storybook-v1/example/.storybook",
-    "storybookReact": "start-storybook -p 9001 -c ./packages/apollo-storybook-react/example/.storybook",
-    "lint": "eslint src",
-    "fix": "npm run lint -- --fix"
+    "bootstrap": "yarn install && lerna bootstrap",
+    "postbootstrap": "npm run build",
+    "build": "lerna run -- build",
+    "test": "lerna run -- test",
+    "prelint": "npm run lint-fix",
+    "lint": "lerna run -- lint",
+    "lint-fix": "prettier --trailing-comma all --single-quote --write \"packages/*/{src,tests,test,benchmark}/**/*.{j,t}s*\"",
+    "lint-staged": "lint-staged",
+    "filesize": "lerna run -- filesize && bundlesize",
+    "type-check": "lerna run -- type-check",
+    "coverage": "lerna run -- coverage",
+    "coverage:upload": "codecov",
+    "danger": "danger run --verbose",
+    "predeploy": "npm run build",
+    "deploy": "lerna publish -m \"chore: Publish\" --independent"
   },
   "pre-commit": [
     "lint"
