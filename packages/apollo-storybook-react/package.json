@@ -15,6 +15,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "eslint": "^4.18.2",
     "faker": "^4.1.0",
+    "lodash.flowright": "^3.5.0",
     "pre-commit": "^1.2.2",
     "standard-version": "^4.2.0"
   },
@@ -22,7 +23,8 @@
     "release": "standard-version",
     "build": "babel ./src --ignore test -d ./lib/",
     "lint": "eslint src",
-    "fix": "npm run lint -- --fix"
+    "fix": "npm run lint -- --fix",
+    "storybook": "start-storybook -p 9001 -c ./example/.storybook"
   },
   "pre-commit": [
     "lint"
