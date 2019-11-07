@@ -13,6 +13,9 @@ import { ApolloLink, Observable } from 'apollo-link';
  */
 function delay(ms) {
   return new Promise(resolve => {
+    if (ms === 0) {
+      resolve();
+    }
     setTimeout(() => {
       resolve();
     }, ms);
@@ -20,7 +23,13 @@ function delay(ms) {
 }
 
 function createLink(schema, rootValue = {}, context = {}, options = {}) {
-  const delayMs = (options && options.delayMs) || 300;
+  let delayMs = 300; // Default
+  if (
+    Object.prototype.hasOwnProperty.call(options, 'delayMs') &&
+    typeof options.delayMs == 'number'
+  ) {
+    delayMs = options.delayMs;
+  }
   return new ApolloLink(operation => {
     return new Observable(observer => {
       const { query, operationName, variables } = operation;
