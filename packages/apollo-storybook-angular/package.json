@@ -1,6 +1,6 @@
 {
   "name": "apollo-storybook-angular",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "storybook": "start-storybook -p 9001 -c ./example/.storybook"
   },
@@ -36,6 +36,6 @@
     "zone.js": "~0.8.26"
   },
   "dependencies": {
-    "apollo-storybook-core": "^0.5.3"
+    "apollo-storybook-core": "^0.5.4"
   }
 }
