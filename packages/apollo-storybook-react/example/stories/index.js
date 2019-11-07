@@ -1,7 +1,8 @@
 import React from 'react';
-import { Query, graphql, compose } from 'react-apollo';
+import { Query, graphql } from 'react-apollo';
 import gql from 'graphql-tag';
 import { storiesOf } from '@storybook/react';
+import compose from 'lodash.flowright';
 
 let HelloWorld = function HelloWorld({ data }) {
   const hello = data && data.helloWorld;

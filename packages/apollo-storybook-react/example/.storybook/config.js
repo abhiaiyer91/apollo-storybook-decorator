@@ -37,6 +37,7 @@ addDecorator(
 
 function loadStories() {
   require('../stories/index.js'); // eslint-disable
+  require('../stories/hooks.js'); // eslint-disable
 }
 
 configure(loadStories, module);
