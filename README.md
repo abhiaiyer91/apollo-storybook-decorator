@@ -45,10 +45,10 @@ function CurrentUser() {
   return (
     <Query query={userQuery}>
       {({ loading, data }) => {
-        const user = data && data.currentUser;
         if (loading) {
           return <h1>Loading one second please!</h1>;
         }
+        const user = data && data.currentUser;
         return (
           <div>
             <img src={user.avatar} />
