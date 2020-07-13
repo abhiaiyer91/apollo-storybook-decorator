@@ -36,7 +36,7 @@
     "react": "^16.10.2",
     "react-apollo": "^3.1.2",
     "react-dom": "^16.10.2",
-    "standard-version": "^4.2.0"
+    "standard-version": "^8.0.1"
   },
   "scripts": {
     "bootstrap": "yarn install && lerna bootstrap",
