@@ -17,7 +17,7 @@
     "faker": "^4.1.0",
     "pre-commit": "^1.2.2",
     "react-native": "^0.51.0",
-    "standard-version": "^4.2.0"
+    "standard-version": "^8.0.1"
   },
   "scripts": {
     "release": "standard-version",
