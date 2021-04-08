@@ -18,7 +18,7 @@
 ## The Gist
 
 - Provide GraphQL type definitions to the decorator.
-- Provide a Mock object like you would with `graphql-tools` http://dev.apollodata.com/tools/graphql-tools/mocking.html
+- Provide a Mock object like you would with `graphql-tools` https://www.graphql-tools.com/docs/mocking/
 
 Take this:
 
