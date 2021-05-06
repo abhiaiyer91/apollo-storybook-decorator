@@ -1190,10 +1190,10 @@ apollo-link@^1.2.3:
     apollo-utilities "^1.0.0"
     zen-observable-ts "^0.8.10"
 
-apollo-storybook-core@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.5.3.tgz#98dd878d4f66d7e61b5dd80c4f7ca32b5e5cd807"
-  integrity sha512-pi0SgrEc0vngpyz0V/Dk54szYVIy0lHWKO3S/OwQ3jK0RmGq7FUW7qIzEyt3GT6Wk3ZVnAyj9JBleoooxbCpIA==
+apollo-storybook-core@^0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.5.4.tgz#8357861cfb127ac9a9d0afc4d87fdf5ff97f39b2"
+  integrity sha512-5h+Yr4Pt2foGJi078gmjlQZ4mj8NBNravjjyhFOrfXTDQd2ODgWn2cwoSGJcpp+iZdkGwwlFkZbyJ1nBTsxukg==
 
 apollo-utilities@1.0.25, apollo-utilities@^1.0.25:
   version "1.0.25"
@@ -7157,8 +7157,9 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
 ua-parser-js@^0.7.9:
-  version "0.7.17"
-  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.17.tgz#e9ec5f9498b9ec910e7ae3ac626a805c4d09ecac"
+  version "0.7.28"
+  resolved "https://registry.yarnpkg.com/ua-parser-js/-/ua-parser-js-0.7.28.tgz#8ba04e653f35ce210239c64661685bf9121dec31"
+  integrity sha512-6Gurc1n//gjp9eQNXjD9O3M/sMwVtN5S8Lv9bvOYBfKfDNiIIhqiyi01vMBO45u4zkDE420w/e0se7Vs+sIg+g==
 
 uglify-es@^3.3.4:
   version "3.3.9"
