@@ -1190,10 +1190,10 @@ apollo-link@^1.2.3:
     apollo-utilities "^1.0.0"
     zen-observable-ts "^0.8.10"
 
-apollo-storybook-core@^0.5.3:
-  version "0.5.3"
-  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.5.3.tgz#98dd878d4f66d7e61b5dd80c4f7ca32b5e5cd807"
-  integrity sha512-pi0SgrEc0vngpyz0V/Dk54szYVIy0lHWKO3S/OwQ3jK0RmGq7FUW7qIzEyt3GT6Wk3ZVnAyj9JBleoooxbCpIA==
+apollo-storybook-core@^0.5.4:
+  version "0.5.4"
+  resolved "https://registry.yarnpkg.com/apollo-storybook-core/-/apollo-storybook-core-0.5.4.tgz#8357861cfb127ac9a9d0afc4d87fdf5ff97f39b2"
+  integrity sha512-5h+Yr4Pt2foGJi078gmjlQZ4mj8NBNravjjyhFOrfXTDQd2ODgWn2cwoSGJcpp+iZdkGwwlFkZbyJ1nBTsxukg==
 
 apollo-utilities@1.0.25, apollo-utilities@^1.0.25:
   version "1.0.25"
@@ -2919,8 +2919,9 @@ debug@^4.1.0:
     ms "^2.1.1"
 
 decode-uri-component@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.0.tgz#eb3913333458775cb84cd1a1fae062106bb87545"
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/decode-uri-component/-/decode-uri-component-0.2.2.tgz#e69dbe25d37941171dd540e024c444cd5188e1e9"
+  integrity sha512-FqUYQ+8o158GyGTrMFJms9qh3CqTKvAqgqsTnkLI8sKu0028orqBhxNMFkFen0zGyg6epACD32pjVk58ngIErQ==
 
 deep-equal@^1.0.1:
   version "1.0.1"
